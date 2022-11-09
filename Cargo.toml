@@ -18,6 +18,9 @@ exclude = [
 [dependencies]
 maplit = "1.0.2"
 chrono = "0.4.19"
+serde = { version = "1.0.1", features = ["derive"] }
+strum = "0.24"
+strum_macros = "0.24"
 
 [dev-dependencies]
 libc = "0.2"
@@ -37,3 +40,5 @@ features = ["user-hooks"]
 harness = false
 name = "connection-benchmark"
 path = "benches/connection.rs"
+
+
