@@ -21,8 +21,8 @@ use super::value::{
 
 use std::collections::HashMap;
 use std::ffi::CString;
-use std::vec::IntoIter;
 use std::os::raw::c_char;
+use std::vec::IntoIter;
 
 /// Parameters for connecting to database.
 ///
