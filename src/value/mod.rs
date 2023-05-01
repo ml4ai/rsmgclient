@@ -20,8 +20,8 @@ use std::ffi::{CStr, CString};
 use std::fmt;
 use std::fmt::Formatter;
 use std::num::TryFromIntError;
-use std::slice;
 use std::os::raw::c_char;
+use std::slice;
 
 /// Representation of parameter value used in query.
 pub enum QueryParam {
