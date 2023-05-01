@@ -21,6 +21,7 @@ use std::fmt;
 use std::fmt::Formatter;
 use std::num::TryFromIntError;
 use std::slice;
+use std::os::raw::c_char;
 
 /// Representation of parameter value used in query.
 pub enum QueryParam {
@@ -165,7 +166,7 @@ fn mg_value_float(mg_value: *const bindings::mg_value) -> f64 {
     unsafe { bindings::mg_value_float(mg_value) }
 }
 
-pub(crate) unsafe fn c_string_to_string(c_str: *const i8, size: Option<u32>) -> String {
+pub(crate) unsafe fn c_string_to_string(c_str: *const c_char, size: Option<u32>) -> String {
     // https://github.com/rust-lang/rust/blob/master/library/std/src/ffi/c_str.rs#L1230
     let c_str = match size {
         Some(x) => CStr::from_bytes_with_nul_unchecked(slice::from_raw_parts(
